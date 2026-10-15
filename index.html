@@ -1,0 +1,651 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mint Aura professional cleaning service</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <!-- ================= HEADER ================= -->
+        <header class="header">
+            <div class="container">
+
+            <!-- logo -->
+                <a href="#" class="logo">
+                    <img src="img/img-1.png"  alt="Mint Aura logo">
+                    <div class="logo-text">
+                        <h2>MINT AURA</h2>
+                        <p>fresh space, peaceful minds</p>
+                    </div>
+                </a>
+
+                <!--navigation-->
+                <nav class="navbar">
+                    <a href="#home" class="active">home</a>
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#why-us">Why us</a>
+                    <a href="#gallary">Gallery</a>
+                    <a href="#testimonials">Testimonials</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+                <a href="#bookingModal" id="bookserviceBtn" class="book-btn-1" data-book-modal>
+                    Book a Service →
+                </a>
+            </div>
+        </header>
+
+        <div class="booking-modal-overlay" id="bookingModal">
+            <div class="booking-modal-container">
+                <button type="button" class="modal-close-btn" id="closeModalBtn" aria-label="Close booking form">&times;</button>
+
+               <div class="modal-header">
+      <span class="subtitle">BOOK & TRANSFER</span>
+      <h2>Select Service & Make Payment</h2>
+    </div>
+
+    <form id="bookingForm" class="booking-form">
+      
+      <!-- Step 1: Service Selection -->
+      <label class="section-label">1. Choose a Service</label>
+      <div class="service-options-grid">
+        <!-- Home Cleaning -->
+        <label class="service-option-card">
+          <input type="radio" name="service_type" value="Home Cleaning" data-price="80" checked>
+          <div class="card-content">
+            <div class="service-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            </div>
+            <h4>Home Cleaning</h4>
+            <span class="service-price">$80</span>
+            <p>Standard home refresh and maintenance.</p>
+          </div>
+        </label>
+
+        <!-- Office Cleaning -->
+        <label class="service-option-card">
+          <input type="radio" name="service_type" value="Office Cleaning" data-price="120">
+          <div class="card-content">
+            <div class="service-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="9" y1="6" x2="9" y2="6.01"></line><line x1="15" y1="6" x2="15" y2="6.01"></line><line x1="9" y1="10" x2="9" y2="10.01"></line><line x1="15" y1="10" x2="15" y2="10.01"></line><line x1="9" y1="14" x2="9" y2="14.01"></line><line x1="15" y1="14" x2="15" y2="14.01"></line></svg>
+            </div>
+            <h4>Office Cleaning</h4>
+            <span class="service-price">$120</span>
+            <p>Workplace workspace & desk sanitation.</p>
+          </div>
+        </label>
+
+        <!-- Deep Cleaning -->
+        <label class="service-option-card">
+          <input type="radio" name="service_type" value="Deep Cleaning" data-price="180">
+          <div class="card-content">
+            <div class="service-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l1.912 5.813a2 2 0 001.275 1.275L21 12l-5.813 1.912a2 2 0 00-1.275 1.275L12 21l-1.912-5.813a2 2 0 00-1.275-1.275L3 12l5.813-1.912a2 2 0 001.275-1.275L12 3z"></path></svg>
+            </div>
+            <h4>Deep Cleaning</h4>
+            <span class="service-price">$180</span>
+            <p>Thorough, detailed top-to-bottom clean.</p>
+          </div>
+        </label>
+      </div>
+
+      <!-- Step 2: Contact Details -->
+      <label class="section-label">2. Your Contact & Schedule</label>
+      <div class="form-inputs-grid">
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" name="fullName" placeholder="Jane Doe" required>
+        </div>
+        <div class="form-group">
+          <label for="phoneNumber">Phone Number</label>
+          <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="+234 801 234 5678" required>
+        </div>
+        <div class="form-group">
+          <label for="preferredDate">Preferred Date</label>
+          <input type="date" id="preferredDate" name="preferredDate" required>
+        </div>
+      </div>
+
+      <!-- Step 3: Bank Transfer Details Box -->
+      <label class="section-label">3. Make Transfer</label>
+      <div class="bank-details-card">
+        <div class="bank-info-row">
+          <span>Bank Name:</span>
+          <strong>Mint Global Bank</strong>
+        </div>
+        <div class="bank-info-row">
+          <span>Account Name:</span>
+          <strong>Mint Aura Cleaning Ltd</strong>
+        </div>
+        <div class="bank-info-row highlight-acc">
+          <span>Account Number:</span>
+          <div class="acc-copy-wrapper">
+            <strong id="accountNum">1234567890</strong>
+            <button type="button" id="copyAccBtn" class="copy-btn">Copy</button>
+          </div>
+        </div>
+        <div class="bank-info-row">
+          <span>Total to Transfer:</span>
+          <strong id="transferAmount" class="highlight-price">$80</strong>
+        </div>
+      </div>
+
+      <!-- Step 4: Payment Confirmation File Upload -->
+      <label class="section-label">4. Upload Payment Confirmation</label>
+      <div class="form-group upload-group">
+        <label for="receiptUpload" class="file-label">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+          <span id="fileLabelText">Choose Receipt Image / Screenshot</span>
+        </label>
+        <input type="file" id="receiptUpload" name="receiptUpload" accept="image/*, application/pdf" required>
+      </div>
+
+      <!-- Submit CTA Button -->
+      <button type="submit" class="submit-booking-btn">I Have Made the Transfer →</button>
+
+    </form>
+  </div>
+</div>
+        <!-- =====HERO SECTION====== -->
+         
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <p class="small-title">
+                PROFESSIONAL CLEANING SERVICE
+                </p>
+
+                <h1>
+                clean spaces,<br>
+                <span>Healthier Living</span>
+                </h1>
+                <p class="hero-text">
+                    Mint Aura provides reliable and professional cleaning
+                    services for homes and offices. We create fresh, clean,
+                    and comfortable spaces you'll love.
+                </p>
+            <div class="hero-buttons">
+                <a href="#contact" class="primary-btn">
+                    Book a Service →
+                </a>
+
+                <a href="#about" class="learn-btn">
+                    Learn more
+                </a>
+                <button class="play-btn" id="playVideo">
+            ▶
+        </button>
+
+            </div>
+            </div>
+
+            <div class="hero-img">
+                <img src="img/img-3.png"
+                alt="clean modern living room">
+            </div>
+            </div>
+        </section>
+
+        <!--======ABOUT SECTION======-->
+        <section  class="about"  id="about"> 
+            <div class="container about-inner">
+                
+            <div class="about-image">
+                <img src="img/img4.png" 
+                alt="Mint Aura professional cleaning">
+            </div>
+
+            <div class="about-content">
+                <p class="section-label">
+                    ABOUT MINT AURA
+                </p>
+
+                <h2>
+                    More Than Just Cleaning<br>
+                    — It's a Lifestyle
+                </h2>
+                <p>
+                    At Mint Aura, we believe a clean space leads to a
+                    healthier, happier life. Our professional team is
+                    dedicated to delivering high-quality cleaning services
+                    that fit your needs, whether at home or in the office.
+                </p>
+
+                <a href="#" class="primary-btn">
+                    Learn More →
+                </a>
+            </div>
+               <div class="cleaning image">
+                <img src="img/img6.png" 
+                alt="Mint Aura professional cleaning">
+            </div>
+            </div>
+        </div>
+
+<!--==========TRUST FEATURES===========-->
+
+<div class="trust-side">      
+    <div class="trust-image">
+        <img src="img/img-1.png" alt="Reliable and trusted cleaning service">
+</div>
+ <ul class="trust-list">
+     <li>
+      <span class="trust-icon">✓</span>
+         <div class="trust-text">
+            <strong>Reliable & Trusted</strong>
+              <small>Your satisfaction is our priority.</small>
+ </div>
+</li>
+
+    <li>
+     <span class="trust-icon">✓</span>
+        <div class="trust-text">
+             <strong>Professional Team</strong>
+               <small>Skilled, trained and background-checked.</small>
+ </div>
+     </li>
+
+     <li>
+        <span class="trust-icon">✓</span>
+            <div class="trust-text">
+               <strong>Eco-Friendly Products</strong>
+              <small>Safe for your family and the environment.</small>
+</div>
+</li>
+       <li>
+         <span class="trust-icon">✓</span>
+            <div class="trust-text">
+                <strong>Flexible Scheduling</strong>
+                   <small>We work around your busy lifestyle.</small>
+    </div>
+     </li>
+    </ul>
+</div>
+        
+</div>
+</section>
+
+<!-- ================= SERVICES SECTION ================= -->
+<section class="services" id="services">
+
+    <div class="section-heading">
+        <p class="section-label">WHAT WE OFFER</p>
+
+        <h2>
+            Cleaning Services That<br>
+            Make a Difference
+        </h2>
+
+        <p>
+            From everyday cleaning to deep cleaning,
+            we help keep your spaces fresh, healthy and comfortable.
+        </p>
+    </div>
+
+
+    <!-- ================= SERVICE GRID ================= -->
+    <div class="services-grid">
+
+
+
+        <!-- SERVICE 1 -->
+        <div class="service-card">
+            <div class="service-image">
+                <img src="img/img-5.png" alt="Home cleaning service">
+            </div>
+
+            <div class="service-content">
+                <h3>Home Cleaning</h3>
+                <p>
+                    Keep your home fresh, clean and comfortable with our professional residential cleaning service.
+                </p>
+
+                <a href="#contact">→</a>
+            </div>
+        </div>
+
+
+
+        <!-- SERVICE 2 -->
+        <div class="service-card">
+            <div class="service-image">
+                <img src="img/img-7.png" alt="Office cleaning service">
+            </div>
+
+            <div class="service-content">
+                <h3>Office Cleaning</h3>
+                <p>
+                    A cleaner workspace boosts productivity.
+                </p>
+
+                <a href="#contact">→</a>
+            </div>
+        </div>
+
+
+
+        <!-- SERVICE 3 -->
+        <div class="service-card">
+            <div class="service-image">
+                <img src="img/img-8.png" alt="Deep cleaning service">
+            </div>
+
+            <div class="service-content">
+                <h3>Deep Cleaning</h3>
+                <p>
+                    For a truly fresh and spotless space.
+                </p>
+
+                <a href="#contact">→</a>
+            </div>
+        </div>
+
+
+        <!-- SERVICE 4 -->
+        <div class="service-card">
+            <div class="service-image">
+                <img src="img/img-9.png" alt="Move-in and move-out cleaning">
+            </div>
+
+            <div class="service-content">
+                <h3>Move-In / Move-Out</h3>
+                <p>
+                    Start fresh in a spotless space.
+                </p>
+
+                <a href="#contact">→</a>
+            </div>
+        </div>
+
+
+        <!-- SERVICE 5 -->
+        <div class="service-card">
+            <div class="service-image">
+                <img src="img/img-10.png" alt="Window cleaning">
+            </div>
+
+            <div class="service-content">
+                <h3>Window Cleaning</h3>
+                <p>
+                    Crystal clear views, inside and out.
+                </p>
+
+                <a href="#contact">→</a>
+            </div>
+        </div>
+
+
+        <!-- SERVICE 6 -->
+        <div class="service-card">
+            <div class="service-image">
+                <img src="img/img-11.png" alt="Carpet and upholstery cleaning">
+            </div>
+
+            <div class="service-content">
+                <h3>Carpet & Upholstery</h3>
+                <p>
+                    Fresh fabrics, revived spaces.
+                </p>
+
+                <a href="#contact">→</a>
+            </div>
+        </div>
+
+
+        <!-- SERVICE 7 -->
+        <div class="service-card">
+            <div class="service-image">
+                <img src="img/img-12.png" alt="Post-construction cleaning">
+            </div>
+
+            <div class="service-content">
+                <h3>Post-Construction</h3>
+                <p>
+                    Remove dust and debris, leave perfection.
+                </p>
+
+                <a href="#contact">→</a>
+            </div>
+        </div>
+
+
+        <!-- SERVICE 8 -->
+        <div class="service-card">
+            <div class="service-image">
+                <img src="img/img-13.png" alt="Commercial cleaning">
+            </div>
+
+            <div class="service-content">
+                <h3>Commercial Cleaning</h3>
+                <p>
+                    For businesses that value cleanliness.
+                </p>
+
+                <a href="#contact">→</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ================= WHY US SECTION ================= -->
+
+<section class="why-us">
+
+    <div class="why-us container">
+    <div class="why-us-inner">
+        <div class="why-us content">
+
+            <p class="section-label">WHY CHOOSE US</p>
+
+            <h2 class="head-2">The Mint Aura Advantage.</h2>
+
+            <p   class="p-2">
+            we go beyond just cleaning-we bring fresshness,comfort and care to every space.
+            </p>
+        </div>
+
+            <div class="why-list">
+
+                <div class="why-item">
+                    <span>✓</span>
+                    <div>
+                        <h3>100% satisfaction
+                            Guarantee
+                        </h3>
+                        <p>We are not happy untill you are.</p>
+                    </div>
+                </div>
+
+                <div class="why-item">
+                    <span>✓</span>
+                    <div>
+                        <h3>Trained & verified
+                            professionals
+                        </h3>
+                        <p>Skilled. trust worthy
+                           and respectfull.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="why-item">
+                    <span>✓</span>
+                    <div>
+                        <h3>Eco-Friendly Cleaning Products</h3>
+                        <p>Safe for your family.
+                            pets & environmemnt.
+                        </p>
+                    </div>
+                </div>
+                <div class="why-item">
+                    <span>✓</span>
+                    <div>
+                        <h3>flexible schedle</h3>
+                        <p>Book at your convinience, 
+                            anytime.</p>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="how-it-works">
+  <div class="container">
+    <!-- Subtitle / Eyebrow -->
+    <div class="section-title">
+      <span class="subtitle">HOW IT WORKS</span>
+      <h2>Get Your Space Clean in 3 Simple Steps</h2>
+    </div>
+
+    <!-- Steps Container -->
+    <div class="steps-grid">
+      <!-- Step 1 -->
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <div class="step-icon">
+          <!-- Calendar / Schedule Icon -->
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+        </div>
+        <h3>Book Your Service</h3>
+        <p>Select your desired cleaning service, date, and time that fits your schedule.</p>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <div class="step-icon">
+          <!-- Sparkles / Cleaning Icon -->
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3l1.912 5.813a2 2 0 001.275 1.275L21 12l-5.813 1.912a2 2 0 00-1.275 1.275L12 21l-1.912-5.813a2 2 0 00-1.275-1.275L3 12l5.813-1.912a2 2 0 001.275-1.275L12 3z"></path>
+          </svg>
+        </div>
+        <h3>We Clean & Transform</h3>
+        <p>Our background-checked professionals arrive fully equipped to clean your space.</p>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <div class="step-icon">
+          <!-- Smile / Satisfaction Icon -->
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+            <line x1="9" y1="9" x2="9.01" y2="9"></line>
+            <line x1="15" y1="9" x2="15.01" y2="9"></line>
+          </svg>
+        </div>
+        <h3>Enjoy Your Fresh Space</h3>
+        <p>Step into a spotless, refreshed environment and enjoy peace of mind.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-grid">
+      
+      <!-- Brand & About Column -->
+      <div class="footer-col brand-col">
+        <div class="footer-logo">
+          <div class="logo-icon">
+            <a href="#" class="logo">
+                    <img src="img/img-1.png"  alt="Mint Aura logo">
+          </div>
+          <div class="logo-text">
+            <span class="brand-name">MINT AURA</span>
+            <span class="brand-tagline">Fresh Spaces, Peaceful Minds</span>
+          </div>
+        </div>
+        <p class="footer-description">
+          Mint Aura provides reliable and professional cleaning services for homes and offices. We create fresh, clean, and comfortable spaces you'll love.
+        </p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="#" aria-label="Twitter">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Links Column -->
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Why Choose Us</a></li>
+          <li><a href="#">Testimonials</a></li>
+        </ul>
+      </div>
+
+      <!-- Our Services Column -->
+      <div class="footer-col">
+        <h3>Our Services</h3>
+        <ul class="footer-links">
+          <li><a href="#">Home Cleaning</a></li>
+          <li><a href="#">Office Cleaning</a></li>
+          <li><a href="#">Deep Cleaning</a></li>
+          <li><a href="#">Carpet & Upholstery</a></li>
+          <li><a href="#">Post-Construction</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info Column -->
+      <div class="footer-col contact-col">
+        <h3>Contact Us</h3>
+        <ul class="contact-info">
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>123 Clean Street, Suite 100, Green City</span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span>+1 (555) 019-2834</span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span>support@mintaura.com</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <p>&copy; 2026 Mint Aura. All rights reserved.</p>
+      <div class="legal-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
